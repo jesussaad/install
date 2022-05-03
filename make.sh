@@ -17,8 +17,8 @@ git clone git@github.com:ON3-Solutions/"$repository".git
 
 echo
 echo "Rodando a pré instalação"
-echo "Você já rodou o pre-make.sh?"
-echo 'Pressione ENTER para continuar...'
+echo "Você já rodou o pre-install.sh?"
+echo 'Pressione ENTER quando estiver pronto...'
 read -r
 
 echo

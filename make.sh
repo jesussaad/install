@@ -1,9 +1,10 @@
 #!/bin/bash
-example="Uso incorreto. Exemplo de uso: ./make.sh pdf-to-image pdf-to-image-server"
-[[ $# != 2 ]] && echo "$example" && exit 1
+example="Uso incorreto. Exemplo de uso: ./make.sh pdf-to-image pdf-to-image-server [on3-proxy]"
+[[ $# -lt 2 ]] && echo "$example" && exit 1
 
 repository=$1
 ms=$2
+profile=$3
 
 if [[ $(whoami) != "ON3" ]]; then
     echo 'EXECUTE ESSE SCRIPT COM O USUÁRIO ON3'
@@ -23,7 +24,12 @@ read -r
 
 echo
 echo "Rodando o instalador"
-"$repository"/"$ms"/scripts/install.sh
+if [[ -z "$profile" ]]; then
+    "$repository"/"$ms"/scripts/install.sh
+else
+    "$repository"/"$ms"/scripts/install--"$profile".sh
+fi
+
 
 echo "Excluindo o repositório"
 rm -rf "$repository"

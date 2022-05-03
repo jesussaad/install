@@ -25,7 +25,7 @@ read -r
 echo
 echo
 echo 'Informe o profile da instalação, ex.: on3-proxy'
-echo 'Você deixar vazio para nenhum profile'
+echo 'Você pode deixar vazio para nenhum profile'
 read -r profile
 
 echo
